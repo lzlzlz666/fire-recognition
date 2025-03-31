@@ -29,22 +29,6 @@
     <string>摄像头输入</string>
    </property>
   </widget>
-  <widget class="QLabel" name="frame_label">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>590</y>
-     <width>951</width>
-     <height>541</height>
-    </rect>
-   </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QRadioButton" name="camera_2">
    <property name="geometry">
     <rect>
@@ -109,27 +93,40 @@
   <widget class="QPushButton" name="det">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>70</x>
      <y>670</y>
-     <width>181</width>
+     <width>231</width>
      <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string>开始检测</string>
+    <string>开始火焰检测</string>
    </property>
   </widget>
   <widget class="QPushButton" name="det_2">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>640</x>
      <y>670</y>
-     <width>181</width>
+     <width>231</width>
      <height>71</height>
     </rect>
    </property>
    <property name="text">
     <string>停止检测</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="det_3">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>670</y>
+     <width>231</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>开始通用检测</string>
    </property>
   </widget>
  </widget>
