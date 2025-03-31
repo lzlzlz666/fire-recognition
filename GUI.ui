@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>847</width>
-    <height>624</height>
+    <width>884</width>
+    <height>620</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,26 +18,32 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>150</y>
-      <width>281</width>
-      <height>281</height>
+      <y>70</y>
+      <width>381</width>
+      <height>381</height>
      </rect>
     </property>
     <property name="text">
-     <string>                   原图片</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>C:/Users/linz/Pictures/Camera Roll/1743381236668.jpg</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>150</y>
-      <width>281</width>
-      <height>281</height>
+      <x>490</x>
+      <y>60</y>
+      <width>381</width>
+      <height>381</height>
      </rect>
     </property>
     <property name="text">
-     <string>                   识别后图片</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>C:/Users/linz/Pictures/Camera Roll/图片-copy.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -85,12 +91,36 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>847</width>
+     <width>884</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>图像识别</string>
+    </property>
+    <addaction name="actiontest"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>视频识别</string>
+    </property>
+    <addaction name="actionvedio"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actiontest">
+   <property name="text">
+    <string>test</string>
+   </property>
+  </action>
+  <action name="actionvedio">
+   <property name="text">
+    <string>vedio</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

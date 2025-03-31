@@ -9,19 +9,25 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Vedio import Ui_Form  # 导入 Ui_Form 类
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(847, 624)
+        MainWindow.resize(884, 620)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.label_1 = QtWidgets.QLabel(self.centralwidget)
-        self.label_1.setGeometry(QtCore.QRect(80, 150, 281, 281))
+        self.label_1.setGeometry(QtCore.QRect(80, 70, 381, 381))
+        self.label_1.setText("")
+        self.label_1.setPixmap(QtGui.QPixmap("C:/Users/linz/Pictures/Camera Roll/1743381236668.jpg"))
         self.label_1.setObjectName("label_1")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(430, 150, 281, 281))
+        self.label_2.setGeometry(QtCore.QRect(490, 60, 381, 381))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("C:/Users/linz/Pictures/Camera Roll/图片-copy.png"))
         self.label_2.setObjectName("label_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(370, 500, 111, 51))
@@ -34,12 +40,24 @@ class Ui_MainWindow(object):
         self.uploadPushButton.setObjectName("uploadPushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 847, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 884, 22))
         self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setObjectName("menu")
+        self.menu_2 = QtWidgets.QMenu(self.menubar)
+        self.menu_2.setObjectName("menu_2")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+        self.actiontest = QtWidgets.QAction(MainWindow)
+        self.actiontest.setObjectName("actiontest")
+        self.actionvedio = QtWidgets.QAction(MainWindow)
+        self.actionvedio.setObjectName("actionvedio")
+        self.menu.addAction(self.actiontest)
+        self.menu_2.addAction(self.actionvedio)
+        self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_2.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -47,8 +65,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_1.setText(_translate("MainWindow", "                   原图片"))
-        self.label_2.setText(_translate("MainWindow", "                   识别后图片"))
         self.pushButton_3.setText(_translate("MainWindow", "火焰识别"))
         self.pushButton_2.setText(_translate("MainWindow", "通用识别"))
         self.uploadPushButton.setText(_translate("MainWindow", "上传图片"))
+        self.menu.setTitle(_translate("MainWindow", "图像识别"))
+        self.menu_2.setTitle(_translate("MainWindow", "视频识别"))
+        self.actiontest.setText(_translate("MainWindow", "test"))
+        self.actionvedio.setText(_translate("MainWindow", "vedio"))

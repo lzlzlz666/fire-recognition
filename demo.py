@@ -8,6 +8,8 @@ from PyQt5.QtGui import QPixmap
 from GUI import Ui_MainWindow
 from ultralytics import YOLO
 
+from sub_main import secondwindow    # 导入子UI类
+
 # 火焰识别模型
 MODEL_PATH_FIRE = r"D:\python_projects\fire-recognition\weights\lz-train-base-yolo11n.pt"
 # 通用识别模型
@@ -17,6 +19,9 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(mywindow, self).__init__()
         self.setupUi(self)
+
+        self.second_window = secondwindow()     # 实例化子界面
+        self.actionvedio.triggered.connect(self.pushbutton_function)
 
         self.uploadPushButton.clicked.connect(self.open_image)
 
@@ -28,6 +33,8 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.current_pixmap = None  # 存储当前显示的图像
         self.file_name = None  # 存储上传的图像的路径
 
+    def pushbutton_function(self):
+        self.second_window.show()  # 通过点击按钮弹出子界面
     def open_image(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "选择图片", "", "Image Files (*.png *.jpg *.bmp *.jpeg)")
         if file_name:
@@ -82,6 +89,7 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # 按照 predict、predict1、predict2 这样的顺序排列，选最新的
         subdirs.sort(key=lambda x: int(x.replace("predict", "")) if x.replace("predict", "").isdigit() else 0, reverse=True)
         return os.path.join(base_dir, subdirs[0])
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
