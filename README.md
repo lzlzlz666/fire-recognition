@@ -16,3 +16,9 @@ fire-recognition/
 │   ├── fire.jpg
 ├── demo.py                 # 运行 YOLO 检测的 Python 脚本
 ├── README.md               # 本说明文件
+
+# 部分界面 
+
+![项目截图](https://github.com/lzlzlz666/fire-recognition/blob/master/run-screenshot01.png)
+![项目截图](https://github.com/lzlzlz666/fire-recognition/blob/master/run-screenshot02.png)
+![项目截图](https://github.com/lzlzlz666/fire-recognition/blob/master/run-screenshot03.png)
