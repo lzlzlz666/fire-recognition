@@ -1,5 +1,4 @@
 import sys
-import cv2
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
