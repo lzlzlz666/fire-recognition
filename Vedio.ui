@@ -29,22 +29,6 @@
     <string>摄像头输入</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="camera_2">
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>30</y>
-     <width>171</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="autoFillBackground">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>摄像头输入</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -75,6 +59,9 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>assets/imgs/camera.png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="video_input_2">
@@ -127,6 +114,25 @@
    </property>
    <property name="text">
     <string>开始通用检测</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="camera_2">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>30</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>摄像头输入</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

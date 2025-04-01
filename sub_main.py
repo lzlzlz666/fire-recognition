@@ -23,6 +23,9 @@ class secondwindow(QtWidgets.QWidget, Ui_Form):
         self.model = YOLO(MODEL_PATH)  # 默认 YOLO 模型
         self.video_source = None  # 存储用户选择的视频源（文件路径 或 摄像头）
 
+        # 让 camera_2 按钮可以取消选中
+        self.camera_2.setAutoExclusive(False)
+
         # 绑定按钮事件
         self.video_input_2.clicked.connect(self.open_video)
         self.camera_2.clicked.connect(self.toggle_camera)
@@ -49,6 +52,7 @@ class secondwindow(QtWidgets.QWidget, Ui_Form):
             self.label_2.setText("未选择视频")
             self.camera_2.setChecked(False)
             self.camera_2.setStyleSheet('')  # 重置按钮样式，取消高亮
+
         else:
             self.video_source = 0  # 选择摄像头
             self.label_2.setText("使用摄像头")

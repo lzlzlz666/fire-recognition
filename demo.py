@@ -9,10 +9,12 @@ from ultralytics import YOLO
 
 from sub_main import secondwindow    # 导入子UI类
 
-# 火焰识别模型
-MODEL_PATH_FIRE = r"D:\python_projects\fire-recognition\weights\lz-train-base-yolo11n.pt"
-# 通用识别模型
-MODEL_PATH_YOLO = r"D:\python_projects\fire-recognition\weights\yolo11n.pt"
+# # 火焰识别模型
+# MODEL_PATH_FIRE = r"D:\python_projects\fire-recognition\weights\lz-train-base-yolo11n.pt"
+# # 通用识别模型
+# MODEL_PATH_YOLO = r"D:\python_projects\fire-recognition\weights\yolo11n.pt"
+MODEL_PATH_FIRE = os.path.join("weights", "lz-train-base-yolo11n.pt")
+MODEL_PATH_YOLO = os.path.join("weights", "yolo11n.pt")
 
 class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -59,15 +61,13 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # 进行预测
         results = model.predict(self.file_name, save=True)
 
-        # 获取 YOLO 生成的最新检测结果目录
-        result_dir = self.get_latest_predict_dir("runs/detect")
-        if result_dir is None:
-            QMessageBox.warning(self, "警告", "未找到检测结果文件夹")
+        # 直接从 YOLO 结果获取保存路径
+        if results and results[0].save_dir:
+            result_img_path = os.path.join(results[0].save_dir, os.path.basename(self.file_name))
+            result_img_path = os.path.splitext(result_img_path)[0] + ".jpg"  # 确保是 .jpg 格式
+        else:
+            QMessageBox.warning(self, "警告", "未找到检测结果")
             return
-
-        # 构造检测结果图片的路径
-        result_img_name = os.path.splitext(os.path.basename(self.file_name))[0] + '.jpg'  # 确保后缀为 .jpg
-        result_img_path = os.path.join(result_dir, result_img_name)
 
         # 读取并显示结果图片
         if os.path.exists(result_img_path):
