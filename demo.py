@@ -78,17 +78,6 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             QMessageBox.warning(self, "警告", f"未找到结果图像: {result_img_path}")
 
-    def get_latest_predict_dir(self, base_dir):
-        """获取最新的 YOLO 预测结果文件夹"""
-        if not os.path.exists(base_dir):
-            return None
-        subdirs = [d for d in os.listdir(base_dir) if d.startswith("predict")]
-        if not subdirs:
-            return None
-        # 按照 predict、predict1、predict2 这样的顺序排列，选最新的
-        subdirs.sort(key=lambda x: int(x.replace("predict", "")) if x.replace("predict", "").isdigit() else 0, reverse=True)
-        return os.path.join(base_dir, subdirs[0])
-
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
