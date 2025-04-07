@@ -23,4 +23,5 @@ fire-recognition/
 ![项目截图](https://github.com/lzlzlz666/fire-recognition/blob/master/run-screenshot01.png)
 ![项目截图](https://github.com/lzlzlz666/fire-recognition/blob/master/run-screenshot02.png)
 ![项目截图](https://github.com/lzlzlz666/fire-recognition/blob/master/run-screenshot03.png)
+![项目截图](https://github.com/lzlzlz666/fire-recognition/blob/master/run-screenshot04.png)
 
